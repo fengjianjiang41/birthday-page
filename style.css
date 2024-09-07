@@ -9,20 +9,51 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgb(0, 0, 0), rgb(256, 256, 256));
+    background: white;
     font-size: 2rem;
     font-family: sans-serif;
     color: rgb(0, 0, 0);
+    overflow: hidden; /* Prevents scrollbars */
 }
 [lang="zh"] {
-  font-family: "SimSun", serif; /* Assigning both SimSun and Songti */
+    font-family: "Hei Ti", sans-serif; /* Assigning Hei Ti and fallback to sans-serif */
 }
 .container {
-    height: 25rem;
-    width: 20rem;
+    height: 30rem;
+    width: 50rem;
     background-color: rgb(236, 88, 100);
     text-align: center;
     padding-top: 12px;
     border-radius: 16px;
     border: 2px solid rgb(237, 125, 49);
+    position: relative;
+    z-index: 1;
+}
+/* Adding a blank row where needed */
+.blank-row {
+    margin-bottom: 1rem; /* Adjust the value as needed */
+}
+
+input[type="number"] {
+    width: 100px; /* Default width */
+    height: 40px; /* Default height */
+    font-size: 1rem; /* Default font size */
+    margin: 10px auto; /* Center horizontally */
+    display: block; /* Center horizontally */
+}
+button {
+    width: 100px; /* Default width */
+    height: 40px; /* Default height */
+    font-size: 1rem; /* Default font size */
+    margin: 10px auto; /* Center horizontally */
+    display: block; /* Center horizontally */
+}
+.image {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }

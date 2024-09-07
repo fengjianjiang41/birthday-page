@@ -5,18 +5,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>邀请函</title>
     <!--The CSS styling-->
-    <link rel="stylesheet" href="style.css" />  
-    <link rel="shortcut icon" href="images/icon.png" >   
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/icon.png">
     <!--type="image/x-icon"/-->
 </head>
 
 <body>
     <div class="container">
-        <div class="temp">-°C</div>
-        <div class="summary">----</div>
-        <div class="location"></div>
-        <div class="location blank-row" lang="zh">这是客官您那儿的天气！</div>
+        <h1>欢迎参加阿见的生日轰趴！</h1>
+        <div class="blank-row"></div>
+        <div class="blank-row"></div>
+        <div class="blank-row"></div>
+        <div id="tip" class="result" lang="zh">请输入一个大于9、小于100的幸运数字（整数）：</div>
+        <input type="number" id="lucky-number" min="10" max="99" />
+        <button onclick="checkNumber()">确认</button>
+        <div id="warning" class="warning" lang="zh"></div>
+        <div id="result1" class="result" lang="zh"></div>
+        <div id="birthday-prompt" class="birthday-prompt" lang="zh"></div>
+        <div id="key-prompt" class="key-prompt" lang="zh"></div>
+        <input type="number" id="secret-key" style="display: none;" />
+        <button id="key-button" style="display: none;" onclick="checkKey()">确认</button>
+        <div id="key-warning" class="key-warning" lang="zh"></div>
+        <div id="result2" class="result" lang="zh"></div>   
+        <div class="temp"></div>
+        <div class="summary"></div>
+        <div class="location"></div>    
     </div>
     <!--Linking the javascript code-->
     <script src="script.js"></script>

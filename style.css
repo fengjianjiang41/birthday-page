@@ -19,7 +19,7 @@ body {
     font-family: "Hei Ti", sans-serif; /* Assigning Hei Ti and fallback to sans-serif */
 }
 .container {
-    height: 30rem;
+    height: 40rem;
     width: 50rem;
     background-color: rgb(236, 88, 100);
     text-align: center;

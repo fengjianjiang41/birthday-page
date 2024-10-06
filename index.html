@@ -14,11 +14,11 @@
 
 <body>
     <div class="container">
-        <h1>欢迎参加阿见的生日轰趴！</h1>
+        <h1 style="font-size: 1.5em;">欢迎参加阿见的生日轰趴！</h1>
         <div class="blank-row"></div>
         <div class="blank-row"></div>
         <div class="blank-row"></div>
-        <div id="tip" class="result" lang="zh">请输入一个大于9、小于100的幸运数字（整数）：</div>
+        <div id="tip1" class="result" lang="zh">请输入一个大于9、小于100的幸运数字（整数）：</div>
         <input type="number" id="lucky-number" min="10" max="99" />
         <button onclick="checkNumber()">确认</button>
         <div id="warning" class="warning" lang="zh"></div>
@@ -31,7 +31,13 @@
         <div id="result2" class="result" lang="zh"></div>   
         <div class="temp"></div>
         <div class="summary"></div>
-        <div class="location"></div>    
+        <div class="location"></div> 
+        <div id="result3" class="result" lang="zh" style="display: none;">离轰趴最后一步！请输入你的中文昵称：</div>
+        <input type="text" id="chinese-name" pattern="[\u4e00-\u9fa5]+" title="请输入中文字符" style="display: none; margin: 0 auto; display: none;" />
+        <button id="name-button"onclick="checkChinese()"style="display: none;" >确认</button>
+        <div id="chinese-name-warning" class="chinese-name-warning" lang="zh"></div>
+        <div id="welcome-message"class="welcome-message"lang="zh"></div>
+        <div id="welcome-container" class="welcome-container" lang="zh"></div>
     </div>
     <!--Linking the javascript code-->
     <script src="script.js"></script>

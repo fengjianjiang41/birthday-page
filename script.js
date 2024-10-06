@@ -18,7 +18,7 @@ function checkNumber() {
     const number = parseInt(luckyNumberInput.value);
 
     if (number >= 10 && number <= 99) {
-        document.getElementById("tip").innerHTML = "感谢填写，稍后会有惊喜！";
+        document.getElementById("tip1").innerHTML = "感谢填写，稍后会有惊喜！";
         result.innerHTML = `你的幸运数字是：<strong>${number}</strong>`;
         luckyNumberInput.style.display = "none";
         document.querySelector("button").style.display = "none";
@@ -50,7 +50,7 @@ function createImages(n) {
                 img.style.opacity = 0;
                 setTimeout(() => img.remove(), 500);
             }
-        }, Math.random() * 50000 + 10000);
+        }, Math.random() * 5000 + 10000);
     }
 
     // Position the remaining 5 images
@@ -85,6 +85,35 @@ function positionRemainingImages() {
         document.getElementById("secret-key").style.display = "block";
         document.getElementById("key-button").style.display = "block";
     }, 60000); // Adjust the timing as needed
+}
+
+function checkChinese() {
+    const chineseNameInput = document.getElementById("chinese-name");
+    const chineseNameWarning = document.getElementById("chinese-name-warning");
+    const chineseName = chineseNameInput.value;
+
+    if (/[\u4e00-\u9fa5]/.test(chineseName)) {
+        document.getElementById("result3").style.display = "none";
+        chineseNameInput.style.display = "none";
+        document.getElementById("name-button").style.display = "none";
+        document.getElementById("welcome-message").innerHTML = `欢迎 ${chineseName}！`;
+        const img = document.createElement('img');
+        img.src = './images/welcome.png'; // Replace with the actual image path
+        img.alt = 'Welcome Image';
+        img.style.display = 'block';
+        img.style.margin = '0 auto';
+        img.style.maxWidth = '15%'; // Adjust the size as needed
+        img.style.height = 'auto'; // Maintain aspect ratio
+        const welcomeContainer = document.getElementById("welcome-container");
+        welcomeContainer.style.display = 'flex';
+        welcomeContainer.style.justifyContent = 'center';
+        welcomeContainer.style.alignItems = 'center';
+        welcomeContainer.appendChild(img);
+        chineseNameWarning.innerHTML = "";
+    } else {
+        chineseNameWarning.innerHTML = "请输入有效的中文名字！";
+        chineseNameInput.value = "";
+    }
 }
 
 function checkKey() {
@@ -128,6 +157,10 @@ function checkKey() {
                 `<img src="icons/${icon1}.svg" style= 'height:10rem'/>`;
         })
         
+        document.getElementById("result3").style.display = "block";
+        document.getElementById("chinese-name").style.display = "block";
+        document.getElementById("name-button").style.display = "block";
+
         // );
         //       }
     } else {
